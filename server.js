@@ -30,6 +30,9 @@ app.use('/uploads', express.static('uploads'));
 
 // Routes
 app.use("/api/issues", issueRoutes);
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
